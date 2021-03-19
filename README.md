@@ -26,3 +26,16 @@ Assumptions:
 ● Cookies in the log file are sorted by timestamp (most recent occurrence is the first line of the file). 
 
 
+#Running Instructions
+- Make sure Go 1.16 is running on your machine
+- From terminal, run build command inside the project home directory -  **go build csv2record.go**
+- run the following command with file(-f) and date(-d) flag to get the intended output - **./csv2record -f "sample.csv" -d "2018-12-09"**  
+
+#Project Structrure
+This project is written using Go. The project has 3 packages, each one has a Single Responsibility and is created following some of the SOLID Design guidelines.
+
+`main` package - It contains the csv2reocrd.go and encapsulates all the functionality in one place. It is the entry point to the project.
+
+`search` package - It has the search responsibility to implement Binary Search to return the first and last index for the searched date.
+
+`max` package - It has the responsibility to create the map of the cookie and count. It uses Stack to store the most active cookies.
